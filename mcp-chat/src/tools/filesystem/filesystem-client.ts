@@ -16,7 +16,7 @@ export async function createFileSystemMcpClient() {
       // NOTE: this argument specifies in which directory the tool is allowed to act.
       // If you change it to `.`, then the LLM will be able to make changes to this very project,
       // which you may or may not want!
-      './sandbox',
+      '.',
     ],
   });
 
