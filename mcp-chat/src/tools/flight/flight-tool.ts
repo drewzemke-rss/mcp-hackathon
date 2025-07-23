@@ -4,7 +4,8 @@ import { getWeather } from '../weather/weather-server.js';
 export const bookFlightTool: [string, Tool] = [
   'book-flight',
   {
-    description: 'Book a flight between two locations and suggest weather and precautions at the destination',
+    description:
+      'Book a flight between two locations and suggest weather and precautions at the destination',
     parameters: jsonSchema({
       type: 'object',
       properties: {

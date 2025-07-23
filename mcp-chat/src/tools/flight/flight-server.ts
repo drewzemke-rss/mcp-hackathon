@@ -1,7 +1,7 @@
 import { McpServer } from '@modelcontextprotocol/sdk/server/mcp.js';
 import z from 'zod';
-import { getWeather } from '../weather/weather-server.js';
 import { getPrecautions } from '../utils/precautions.js';
+import { getWeather } from '../weather/weather-server.js';
 
 const flightServer = new McpServer({ name: 'flight-server', version: '1.0.0' });
 
@@ -26,7 +26,7 @@ flightServer.tool(
         },
       ],
     };
-  }
+  },
 );
 
 export default flightServer;

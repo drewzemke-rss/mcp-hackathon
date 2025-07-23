@@ -1,7 +1,7 @@
-import { jsonSchema, type Tool, type ToolSet } from "ai";
-import { createWeatherMcpClient } from "./weather/weather-client.js";
-import { createFileSystemMcpClient } from "./filesystem/filesystem-client.js";
-import { bookFlightTool } from "./flight/flight-tool.js";
+import { jsonSchema, type Tool, type ToolSet } from 'ai';
+import { createFileSystemMcpClient } from './filesystem/filesystem-client.js';
+import { bookFlightTool } from './flight/flight-tool.js';
+import { createWeatherMcpClient } from './weather/weather-client.js';
 
 // NOTE: you can add/remove/toggle mcp clients here
 const mcpClientInitters = [createWeatherMcpClient, createFileSystemMcpClient];
@@ -26,7 +26,7 @@ export async function initializeTools(): Promise<ToolSet> {
             execute: (input: { [x: string]: unknown }) =>
               mcpClient.callTool({ name: tool.name, arguments: input }),
           },
-        ] as [string, Tool]
+        ] as [string, Tool],
     );
 
     toolList.push(...toolSchemas);
