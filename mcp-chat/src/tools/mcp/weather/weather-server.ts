@@ -1,36 +1,11 @@
 #!/usr/bin/env node
 
-import { exec } from 'node:child_process';
-import { promisify } from 'node:util';
 import { McpServer } from '@modelcontextprotocol/sdk/server/mcp.js';
 import { StdioServerTransport } from '@modelcontextprotocol/sdk/server/stdio.js';
 import z from 'zod';
+import { getWeather } from '../../utils/get-weather';
 
 // This is an example of an MCP server that runs over Stdio.
-
-const execAsync = promisify(exec);
-
-// util function for the server tool
-export async function getWeather(location: string) {
-  if (!location) {
-    throw new Error('Location is required');
-  }
-
-  // encode the location properly for URL
-  const encodedLocation = encodeURIComponent(location);
-
-  try {
-    // use curl to fetch weather data from wttr.in
-    const { stdout } = await execAsync(
-      `curl -s "wttr.in/${encodedLocation}?format=%l:+%C+%t+%h+%w&m"`,
-    );
-
-    return `Weather for ${location}:\n${stdout.trim()}`;
-  } catch (error) {
-    const errorMessage = error instanceof Error ? error.message : 'Unknown error';
-    throw new Error(`Failed to fetch weather data: ${errorMessage}`);
-  }
-}
 
 const server = new McpServer({ name: 'weather-server', version: '1.0.0' });
 
@@ -47,6 +22,7 @@ server.tool(
   },
 
   // tool executor -- runs when the tool is called
+  // note that we have to return a specific format: { content: { type:'text', text:string }[] }
   async ({ location }) => {
     try {
       const weatherData = await getWeather(location);
@@ -71,8 +47,6 @@ server.tool(
     }
   },
 );
-
-// Remove flight logic and integrate flight server if needed
 
 async function main() {
   const transport = new StdioServerTransport();

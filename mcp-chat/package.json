@@ -6,8 +6,8 @@
   "type": "module",
   "scripts": {
     "build": "tsc --build",
-    "chat": "pnpm run build && node dist/chat.js",
-    "ask": "pnpm run build && node dist/ask.js",
+    "chat": "pnpm -s run build && node dist/chat.js",
+    "ask": "pnpm -s run build && node dist/ask.js",
     "lint": "pnpm biome check",
     "lint:fix": "pnpm biome check --fix"
   },

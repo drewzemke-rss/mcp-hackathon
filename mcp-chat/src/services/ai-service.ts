@@ -2,7 +2,17 @@ import { createAmazonBedrock } from '@ai-sdk/amazon-bedrock';
 import { fromNodeProviderChain } from '@aws-sdk/credential-providers';
 import { smoothStream, streamText, type ToolSet } from 'ai';
 import chalk from 'chalk';
-import { initializeTools } from '../tools/init.js';
+
+// EXERCISE 1A: uncomment the line below
+// import { weatherTool } from '../tools/basic/weather-tool.js';
+
+// EXERCISE 1B: uncomment the line below
+// import { fileWriteTool } from '../tools/basic/file-write-tool.js';
+
+// EXERCISE 2: uncomment the block below
+// import { initializeMcpTools } from '../tools/mcp/init-mcp.js';
+// import { createWeatherMcpClient } from '../tools/mcp/weather/weather-client.js';
+// // import { createFileSystemMcpClient } from '../tools/mcp/filesystem/filesystem-client.js';
 
 export interface ChatMessage {
   role: 'user' | 'assistant';
@@ -20,7 +30,18 @@ export class AIService {
 
   async initializeTools() {
     if (!this.tools) {
-      this.tools = await initializeTools();
+      this.tools = {
+        // EXERCISE 1A: uncomment the line below
+        // 'get-weather': weatherTool,
+        // EXERCISE 1B: uncomment the line below
+        // 'write-file': fileWriteTool,
+      };
+
+      // EXERCISE 2: replace the above with the below
+      // this.tools = await initializeMcpTools([
+      //   createWeatherMcpClient,
+      //   // createFileSystemMcpClient
+      // ]);
     }
   }
 

@@ -1,18 +1,13 @@
+import type { Client } from '@modelcontextprotocol/sdk/client/index.js';
 import { jsonSchema, type Tool, type ToolSet } from 'ai';
-import { createFileSystemMcpClient } from './filesystem/filesystem-client.js';
-import { bookFlightTool } from './flight/flight-tool.js';
-import { createWeatherMcpClient } from './weather/weather-client.js';
 
-// NOTE: you can add/remove/toggle mcp clients here
-const mcpClientInitters = [createWeatherMcpClient, createFileSystemMcpClient];
-
-export async function initializeTools(): Promise<ToolSet> {
+export async function initializeMcpTools(initters: (() => Promise<Client>)[]): Promise<ToolSet> {
   const toolList: [string, Tool][] = [];
 
-  for (const createMcp of mcpClientInitters) {
+  for (const createMcp of initters) {
     const mcpClient = await createMcp();
 
-    // ask the mcp server for a list of available tools
+    // ask each mcp server for a list of available tools
     const { tools } = await mcpClient.listTools();
 
     // convert MCP tools to Vercel AI SDK tool format
@@ -31,8 +26,6 @@ export async function initializeTools(): Promise<ToolSet> {
 
     toolList.push(...toolSchemas);
   }
-
-  toolList.push(bookFlightTool);
 
   return Object.fromEntries(toolList);
 }

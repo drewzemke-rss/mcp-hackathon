@@ -14,7 +14,7 @@ export async function createFileSystemMcpClient() {
       // see https://github.com/modelcontextprotocol/servers/tree/main/src/filesystem for more info
       '@modelcontextprotocol/server-filesystem',
       // NOTE: this argument specifies in which directory the tool is allowed to act.
-      // If you change it to `.`, then the LLM will be able to make changes to this very project,
+      // If you set it to `.`, then the LLM will be able to make changes to this very project,
       // which you may or may not want!
       '.',
     ],
