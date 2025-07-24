@@ -8,7 +8,7 @@ export async function createWeatherMcpClient() {
 
   const transport = new StdioClientTransport({
     command: 'node',
-    args: ['./dist/tools/weather/weather-server.js'],
+    args: ['./dist/tools/mcp/weather/weather-server.js'],
   });
 
   await client.connect(transport);

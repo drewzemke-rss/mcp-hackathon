@@ -3,7 +3,7 @@
 import { McpServer } from '@modelcontextprotocol/sdk/server/mcp.js';
 import { StdioServerTransport } from '@modelcontextprotocol/sdk/server/stdio.js';
 import z from 'zod';
-import { getWeather } from '../../utils/get-weather';
+import { getWeather } from '../../utils/get-weather.js';
 
 // This is an example of an MCP server that runs over Stdio.
 

@@ -12,7 +12,9 @@ import chalk from 'chalk';
 // EXERCISE 2: uncomment the block below
 // import { initializeMcpTools } from '../tools/mcp/init-mcp.js';
 // import { createWeatherMcpClient } from '../tools/mcp/weather/weather-client.js';
-// // import { createFileSystemMcpClient } from '../tools/mcp/filesystem/filesystem-client.js';
+// import { createPrecautionsMcpClient } from '../tools/mcp/precautions/precautions-client.js';
+// import { createFlightMcpClient } from '../tools/mcp/flight/flight-client.js';
+// import { createFileSystemMcpClient } from '../tools/mcp/filesystem/filesystem-client.js';
 
 export interface ChatMessage {
   role: 'user' | 'assistant';
@@ -40,8 +42,12 @@ export class AIService {
       // EXERCISE 2: replace the above with the below
       // this.tools = await initializeMcpTools([
       //   createWeatherMcpClient,
-      //   // createFileSystemMcpClient
+      //   createFileSystemMcpClient,
+      //   createFlightMcpClient,
+      //   createPrecautionsMcpClient
       // ]);
+
+      // Ask agent to "book a flight from SFO to HYD and store the ticket confirmation with precautions based on destination weather in a file"
     }
   }
 
