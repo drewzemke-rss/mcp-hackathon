@@ -80,6 +80,13 @@ pnpm ask "Get the weather in Davis, CA and write out a report to './weather-repo
 
 Your goal for the remainder of the time is design, plan, and create a tool that uses any number of MCP tools to solve a complex task. The choice is yours!
 
+Before making your own mcp tool's, you can check sample ask like below example:
+
+pnpm chat 
+you: book a flight from SFO to HYD and store the ticket confirmation with precautions based on destination weather, in a file.
+
+If you observe the console, LLM is smart enough to understand the user request and call the available tools in such a sequence to make the task done. that is the beauty and power of MCP tools.
+
 Here's a [giant list of MCP servers](https://github.com/modelcontextprotocol/servers) that you can use.
 
 And here are some ideas of what you can make:
