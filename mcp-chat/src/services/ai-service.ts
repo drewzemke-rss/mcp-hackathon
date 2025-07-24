@@ -42,12 +42,10 @@ export class AIService {
       // EXERCISE 2: replace the above with the below
       // this.tools = await initializeMcpTools([
       //   createWeatherMcpClient,
-      //   createFileSystemMcpClient,
-      //   createFlightMcpClient,
-      //   createPrecautionsMcpClient
+      // // createFileSystemMcpClient,
+      // // createFlightMcpClient,
+      // // createPrecautionsMcpClient
       // ]);
-
-      // Ask agent to "book a flight from SFO to HYD and store the ticket confirmation with precautions based on destination weather in a file"
     }
   }
 
