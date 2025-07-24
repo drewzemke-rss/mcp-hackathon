@@ -44,7 +44,7 @@ After this session, attendees will be able to
 - LLM has no access to real-time data or booking systems
 - _Example_: "What flights are available?" → _"I can't check real-time flights, but typically..."_
 
-### MCP + LLM (Tools!)
+### LLM + Tools
 
 - LLM is used for natural language processing; it understands user intent and translates to tool calls
 - LLM can use tools to get current flight info

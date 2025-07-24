@@ -8,7 +8,7 @@ The goal of this workshop for you to familiarize yourself with how LLMs can be a
 
 1. Clone this repo.
 2. Go to the `mcp-chat` directory, follow the instructions in [the readme](./mcp-chat/README.md) to set it up.
-3. Run `pnpm ask "Oh, hello!"` to confirm that you can communicate with the LLM.
+3. Run `pnpm ask "Oh, hello"` to confirm that you can communicate with the LLM.
 
 ### Ex. 1A: Add a (Non-MCP) Tool
 
@@ -16,7 +16,7 @@ First, we'll briefly see how tools work with LLMs.
 
 1. Go to [ai-service.ts](`./mcp-chat/src/services/ai-service.ts`) and uncomment the two lines that are preceeded by `EXERCISE 1A`. This will provide a simple weather fetching tool to the LLM.
 
-2. Run `pnpm ask "Oh, hello!"` again. Do you notice a difference in output?
+2. Run `pnpm ask "Oh, hello"` again. Do you notice a difference in output?
 
 3. Run `pnpm ask "What's the weather in Davis?"` to see the tool in action.
 
@@ -29,13 +29,13 @@ Next, you're going to make your own tool! The goal is **to have the LLM be able 
 2. Go to [file-write-tool.ts](`./mcp-chat/src/tools/basic/file-write-tool.ts`). You need to fill this in!
 
    - Write a description that will help the LLM decide _when_ it should call this tool. It doesn't need to be complicated!
-   - Decide what information the LLM needs to provide to the tool. You might need to look up "JSON Schema" to get the format correct.
+   - Decide what information the LLM needs to provide to the tool. You might need to look up [JSON Schema](https://ai-sdk.dev/docs/reference/ai-sdk-core/json-schema#jsonschema) to get the format correct.
    - For the executor function, you can use `fs.writeFileSync()` from the Node standard library. See [here](https://nodejs.org/en/learn/manipulating-files/writing-files-with-nodejs) for an example. Also consider: what text do you want to return to the LLM?
 
 3. To test:
 
 ```sh
-pnpm ask "write 'Hello world!' to './hello.md'"
+pnpm ask "write 'Hello world' to './hello.md'"
 ```
 
 4. Once you've got it working, see how it works in conjunction with the other tool:
