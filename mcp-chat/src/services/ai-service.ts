@@ -12,8 +12,6 @@ import chalk from 'chalk';
 // EXERCISE 2: uncomment the block below
 // import { initializeMcpTools } from '../tools/mcp/init-mcp.js';
 // import { createWeatherMcpClient } from '../tools/mcp/weather/weather-client.js';
-// import { createPrecautionsMcpClient } from '../tools/mcp/precautions/precautions-client.js';
-// import { createFlightMcpClient } from '../tools/mcp/flight/flight-client.js';
 // import { createFileSystemMcpClient } from '../tools/mcp/filesystem/filesystem-client.js';
 
 export interface ChatMessage {
@@ -43,8 +41,6 @@ export class AIService {
       // this.tools = await initializeMcpTools([
       //   createWeatherMcpClient,
       // // createFileSystemMcpClient,
-      // // createFlightMcpClient,
-      // // createPrecautionsMcpClient
       // ]);
     }
   }

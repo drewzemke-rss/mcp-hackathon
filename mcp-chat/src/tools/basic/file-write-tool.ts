@@ -10,9 +10,9 @@ export const fileWriteTool: Tool = {
   parameters: jsonSchema({
     type: 'object',
     properties: {
-      // stuff goes here!
+      // stuff goes here! check out the weather tool for an example
     },
-    required: [''],
+    required: [], // put something here too
   }),
 
   // this is the function that runs when the LLM decides to call the tool.

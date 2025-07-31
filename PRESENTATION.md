@@ -60,9 +60,9 @@ After this session, attendees will be able to
 
 - Implementation-wise, an agent is just:
 
-  - an LLM with a specific role or purpose (often through prompting or fine-tuning)
-  - with access to tools relevant to its domain
-  - wrapped in a loop that manages its interactions
+  - *an LLM* with a specific role or purpose (often through prompting or fine-tuning)
+  - *with access to tools* relevant to its domain
+  - *wrapped in a loop* that manages its interactions
 <br>
 
 - An agent is given an initial task and a set of available tools, and it iterates between calling tools, reading their output, and repeating, until it decides that it is done.
