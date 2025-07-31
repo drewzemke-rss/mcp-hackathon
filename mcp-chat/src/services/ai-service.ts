@@ -24,7 +24,7 @@ export class AIService {
 
   constructor() {
     // AWS Configuration
-    process.env.AWS_PROFILE = 'dev';
+    process.env.AWS_PROFILE = 'qa';
     process.env.AWS_REGION = 'us-west-2';
   }
 
